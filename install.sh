@@ -14,4 +14,6 @@ sudo apt-get update
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 sudo docker compose up --build -d
+echo "УСТАНОВКА ЗАВЕРШЕНА! СКОПИРУЙТЕ КЛЮЧИ:"
+echo "INSTALLATION IS COMPLETE. DON'T FORGET TO COPY KEYS YOUR KEYS:"
 cat connection/connstring.txt
