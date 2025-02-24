@@ -22,8 +22,8 @@ services:
     container_name: xray_configurator
     build: xray_configurator/.
     environment:
-      - SNI=www.cisco.com
-      - NAME=XRAY
+      - SNI=www.samsung.com
+      - NAME=KYZYLYK
       - USERCOUNT=10
     networks:
       - bridge
