@@ -1,0 +1,36 @@
+networks:
+  bridge:
+    driver: bridge    
+
+services:
+  xray:
+    container_name: xray
+    image: ghcr.io/xtls/xray-core:sha-f35fb08-ls
+    networks:
+      - bridge
+    #build: xray_container/.
+    volumes:    
+      - ./xray:/etc/xray
+    depends_on:
+      xray_configurator: 
+        condition: service_completed_successfully
+    ports:
+      - "80:80"
+      - "443:443"
+      
+  xray_configurator:
+    container_name: xray_configurator
+    build: xray_configurator/.
+    environment:
+      - SNI=www.cisco.com
+      - NAME=XRAY
+      - USERCOUNT=10
+    networks:
+      - bridge
+    volumes:    
+      - ./xray:/etc/xray
+      - ./connection:/connection
+
+#volumes:
+  #xray_mount:
+  #connection_mount:

@@ -1,0 +1,1 @@
+vless://#UUID@#IP:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=#SNI&fp=chrome&pbk=#PUBKEY&sid=#SID&spx=%2F&type=tcp&headerType=none##NAME

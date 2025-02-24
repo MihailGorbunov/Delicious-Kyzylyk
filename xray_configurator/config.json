@@ -1,0 +1,59 @@
+{
+    "log": {
+        "access": "/etc/xray/access.log",
+        "error": "/etc/xray/error.log",
+        "loglevel": "info"
+    },
+    "routing": {
+        "domainStrategy": "AsIs",
+        "rules": []
+    },
+    "inbounds": [
+        {
+            "port": 443,
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                    #CLIENTS
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "reality",
+                "realitySettings": {
+                    "show": false,
+                    "dest": "#SNI:443",
+                    "xver": 0,
+                    "serverNames": [
+                        "#SNI"
+                    ],
+                    "privateKey": "#PKEY",
+                    "minClientVer": "",
+                    "maxClientVer": "",
+                    "maxTimeDiff": 0,
+                    "shortIds": [
+                        "#SID"
+                    ]
+                }
+            },
+            "sniffing": {
+                "enabled": true,
+                "destOverride": [
+                    "http",
+                    "tls"
+                ]
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        }
+    ]
+}
