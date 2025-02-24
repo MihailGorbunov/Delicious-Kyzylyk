@@ -1,5 +1,4 @@
 #!bin/bash
-git clone git@github.com:MihailGorbunov/Delicious-Kyzylyk.git
 
 sudo apt-get update
 sudo apt-get install ca-certificates curl
@@ -14,6 +13,5 @@ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-cd Delicious-Kyzylyk
 sudo docker compose up --build -d
 cat connection/connstring.txt
