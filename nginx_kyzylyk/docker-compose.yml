@@ -1,0 +1,17 @@
+networks:
+  bridge:
+    driver: bridge    
+
+services:
+
+  nginx:
+    build: nginx/.
+    networks:
+      - bridge
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./share:/var/share
+    environment:
+      - TZ=Europe/Moscow
