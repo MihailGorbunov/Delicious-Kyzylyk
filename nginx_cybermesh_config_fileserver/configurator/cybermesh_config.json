@@ -119,21 +119,5 @@
         {
             "domain": "www.ccboot.com"
         }
-    ],
-    "ping": {
-        "connect": {
-            "url": "https://proxy.492x9ud43mz9xi49xm342sda.com/api/proxy/ping",
-            "body": {
-                "token": "token",
-                "uniqid": "uniqid"
-            }
-        },
-        "disconnect": {
-            "url": "https://proxy.492x9ud43mz9xi49xm342sda.com/api/proxy/disconnect",
-            "body": {
-                "token": "token",
-                "uniqid": "uniqid"
-            }
-        }
-    }
+    ]
 }

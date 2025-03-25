@@ -1,2 +1,2 @@
-/nginx_cybermesh_config_fileserver/nginx/configs/*
+/nginx_cybermesh_config_fileserver/share/*
 /nginx_cybermesh_config_fileserver/connstring.txt

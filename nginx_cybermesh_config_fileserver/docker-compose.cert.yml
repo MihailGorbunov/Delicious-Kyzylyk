@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./nginx/certbot-etc:/etc/letsencrypt
+    command: certonly --standalone --email dev@cloudcrmweb.com --force-renewal --agree-tos --domain nginx.remotemodelstudio.com
+    ports:
+      - 80:80
+      - 443:443

@@ -14,5 +14,6 @@ services:
       - "443:443"
     volumes:
       - ./share:/var/share
+      - ./nginx/certbot-etc:/etc/letsencrypt
     environment:
       - TZ=Europe/Moscow
