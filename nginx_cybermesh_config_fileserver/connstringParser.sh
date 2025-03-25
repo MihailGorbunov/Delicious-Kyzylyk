@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Clear previous 
+
+if [ -f output.txt ]; then
+rm output.txt
+fi
+
+rm share/*
+
+
 if [ ! -f connstring.txt ]; then
 echo "File connstring.txt not found"
 fi
