@@ -6,16 +6,17 @@ if [ -f output.txt ]; then
 rm output.txt
 fi
 
-rm share/*
+rm ./share/*
 
 
 if [ ! -f connstring.txt ]; then
 echo "File connstring.txt not found"
 fi
 
-CONNSTRING='cat connstring.txt'
+# Read base
 
 touch output.txt
+i=0;
 
 while IFS= read -r line
 do
@@ -24,7 +25,8 @@ do
     elif [[ "$line" =~ vless:// ]]; then
 
         if echo "$line" | grep -qP 'vless://([a-f0-9\-]+)@([^:]+):443\?[^&]+&[^&]+&[^&]+&sni=([^&]+)&fp=chrome&pbk=([^&]+)&sid=([^&]+)&spx=[^&]+&type=tcp&headerType=none#([^ ]+)'; then
-   
+
+            i=$i+1;
             UUID=$(echo "$line" | sed -E 's/^vless:\/\/([a-f0-9\-]+)@.*/\1/')
             IP=$(echo "$line" | sed -E 's/^vless:\/\/[a-f0-9\-]+@([^:]+):443.*/\1/')
             SNI=$(echo "$line" | sed -E 's/.*sni=([^&]+).*/\1/')
@@ -43,7 +45,7 @@ do
             echo "$NEWCONFIG" > ./share/config_$UUID
             
             echo "$user_name:" >> ./output.txt
-            echo "cybermesh://nginx.remotemodelstudio.com/config_$UUID#Weisswurst" >> ./output.txt
+            echo "cybermesh://nginx.remotemodelstudio.com/config_$UUID#Weisswurst_$i" >> ./output.txt
 
         else
             echo "Pattern did not match."
