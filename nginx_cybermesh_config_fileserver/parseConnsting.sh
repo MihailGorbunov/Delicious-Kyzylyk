@@ -26,7 +26,7 @@ do
 
         if echo "$line" | grep -qP 'vless://([a-f0-9\-]+)@([^:]+):443\?[^&]+&[^&]+&[^&]+&sni=([^&]+)&fp=chrome&pbk=([^&]+)&sid=([^&]+)&spx=[^&]+&type=tcp&headerType=none#([^ ]+)'; then
 
-            i=$i+1;
+            i=$(($i+1));
             UUID=$(echo "$line" | sed -E 's/^vless:\/\/([a-f0-9\-]+)@.*/\1/')
             IP=$(echo "$line" | sed -E 's/^vless:\/\/[a-f0-9\-]+@([^:]+):443.*/\1/')
             SNI=$(echo "$line" | sed -E 's/.*sni=([^&]+).*/\1/')
