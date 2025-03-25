@@ -31,10 +31,10 @@ do
             sed "s/#PUBKEY/$PUBKEY/g" |
             sed "s/#SID/$SID/g")
 
-            echo "$NEWCONFIG" > ./share/config_$UUID.json
+            echo "$NEWCONFIG" > ./share/config_$UUID
             
             echo "$user_name:" >> ./output.txt
-            echo "cybermesh://nginx.remotemodelstudio.com/files/config_$UUID.json" >> ./output.txt
+            echo "cybermesh://nginx.remotemodelstudio.com/config_$UUID#Weisswurst" >> ./output.txt
 
         else
             echo "Pattern did not match."
