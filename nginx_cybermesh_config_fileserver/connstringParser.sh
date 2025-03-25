@@ -51,3 +51,4 @@ do
     fi
 done < "connstring.txt"
 
+cat output.txt
