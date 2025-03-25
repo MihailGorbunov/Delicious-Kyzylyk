@@ -6,6 +6,8 @@ fi
 
 CONNSTRING='cat connstring.txt'
 
+touch output.txt
+
 while IFS= read -r line
 do
     if [[ "$line" =~ user_[0-9]+: ]]; then
@@ -31,6 +33,9 @@ do
 
             echo "$NEWCONFIG" > ./share/config_$UUID.json
             
+            echo "$user_name:" >> ./output.txt
+            echo "cybermesh://nginx.remotemodelstudio.com/files/config_$UUID.json" >> ./output.txt
+
         else
             echo "Pattern did not match."
         fi
