@@ -125,5 +125,21 @@
         {
             "domain": "www.splitcam.com"
         }
-    ]
+    ],
+    "ping": {
+        "connect": {
+            "url": "https://nginx.remotemodelstudio.com/api/proxy/ping",
+            "body": {
+                "token": "token",
+                "uniqid": "id"
+            }
+        },
+        "disconnect": {
+            "url": "https://nginx.remotemodelstudio.com/api/proxy/disconnect",
+            "body": {
+                "token": "token",
+                "uniqid": "id"
+            }
+        }
+    }
 }
