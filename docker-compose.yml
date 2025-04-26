@@ -24,7 +24,7 @@ services:
     environment:
       - SNI=www.samsung.com
       - NAME=KYZYLYK
-      - USERCOUNT=10
+      - USERCOUNT=50
     networks:
       - bridge
     volumes:    
