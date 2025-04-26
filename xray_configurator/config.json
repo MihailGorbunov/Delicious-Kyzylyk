@@ -2,7 +2,7 @@
     "log": {
         "access": "/etc/xray/access.log",
         "error": "/etc/xray/error.log",
-        "loglevel": "info"
+        "loglevel": "error"
     },
     "routing": {
         "domainStrategy": "AsIs",
